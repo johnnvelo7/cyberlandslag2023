@@ -1,0 +1,16 @@
+The code you've provided defines a lambda function named flippy that takes a string x as input. Here's how the lambda function works:
+
+    x.encode().hex() encodes the string x as bytes and then converts it to a hexadecimal representation as a string. In this case, the result is the string "6162636465666768696a6b6c6d6e6f7032".
+    m := x.encode().hex() assigns the result of the previous step to the variable m.
+    m[::2] takes every other character of m, starting from the first character. In this case, the result is the string "616364656768696b6c6d6e7032".
+    m[1::2] takes every other character of m, starting from the second character. In this case, the result is the string "62656667726a6b6f".
+    (m[::2] + m[1::2]) concatenates the two strings from steps 3 and 4, resulting in the string "616364656768696b6c6d6e703262656667726a6b6f".
+    bytes.fromhex() converts the concatenated string from step 5 into a bytes object. The bytes object is created by interpreting pairs of characters from the string as hexadecimal numbers. In this case, the bytes object contains the binary representation of the concatenated string, which is b'abcdefghijklnop2befgrk'o'.
+    The bytes object from step 6 is returned as the output of the lambda function.
+
+Therefore, calling flippy(x) with x = "abcdefghijklmnop2" would return b'abcdefghijklnop2befgrk'o'. The lambda function effectively "flips" the bytes by rearranging them in a specific way.
+
+
+90970-73066-91363-03532-83616
+
+abcdefghijklmnop2
