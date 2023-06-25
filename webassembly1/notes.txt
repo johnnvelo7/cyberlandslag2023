@@ -1,0 +1,14 @@
+line 278 "include flag.s"
+
+flagHandler:
+
+    .include "flag.s"
+    
+    
+    505 : 
+    .include "auth.s"
+    
+    
+    
+    command: 	curl -X FLAG http://1.pwn.toys:32143/index.html
+    flag: 	flag{7h15_0p710n_15_n07_rFc_7231_c0mPL14n7}
