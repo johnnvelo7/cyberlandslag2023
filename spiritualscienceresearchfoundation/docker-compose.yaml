@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  backend-auth:
+    build: ./backend-auth
+    depends_on:
+      - postgress-db
+  postgress-db:
+      build: ./postgres-db/.
